@@ -90,6 +90,12 @@ nav .profile-container img {
   width: 400px;
 }
 
+@media only screen and (max-width: 600px) {
+  .modal-container {
+    width: 300px;
+  }
+}
+
 .modal-content {
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
@@ -139,6 +145,12 @@ nav .profile-container img {
   border: 1px solid white;
   border-radius: 5px;
   padding: 8px 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-wrapper-right .btn-manage {
+    padding: 4px 6px;
+  }
 }
 
 .profile-wrapper-right .btn-manage:hover {
@@ -227,6 +239,11 @@ main .logo-google {
   max-width: 400px;
 }
 
+@media only screen and (max-width: 600px) {
+  main .logo-google {
+    max-width: 200px;
+  }
+}
 /* Search Component */
 
 .search-container {
@@ -237,6 +254,7 @@ main .logo-google {
   background-color: white;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
