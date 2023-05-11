@@ -402,6 +402,7 @@ nav .profile-container img {
 
 .search .search-list .search-list-wrapper {
   display: flex;
+  align-items: center;
   padding: 10px 20px 10px 20px;
   cursor: default;
 }
