@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -17,6 +18,35 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10rem 1rem 0 1rem;
+  gap: 30px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+main p {
+  color: gray;
+}
+
+main .logo-google {
+  max-width: 300px;
+  filter: brightness(0) invert(1);
+}
+
+@media only screen and (max-width: 600px) {
+  main .logo-google {
+    max-width: 200px;
+  }
 }
 
 h1 {
@@ -230,39 +260,17 @@ nav .profile-container img {
   gap: 1rem;
 }
 
-main {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  gap: 30px;
-}
-
-main h1 {
-  text-align: center;
-}
-
-main p {
-  color: gray;
-}
-
-main .logo-google {
-  max-width: 300px;
-  filter: brightness(0) invert(1);
-}
-
-@media only screen and (max-width: 600px) {
-  main .logo-google {
-    max-width: 200px;
-  }
-}
 /* Search Component */
 
-.search-container {
+.search {
   width: 100%;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search .search-input {
+  width: 100%;
   padding: 10px 20px;
   border-radius: 50px;
   background-color: white;
@@ -275,7 +283,7 @@ main .logo-google {
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.45);
 }
 
-.search-container input {
+.search .search-input input {
   font-size: 16px;
   flex-grow: 1;
   border: 0;
@@ -284,22 +292,41 @@ main .logo-google {
   padding-top: 2px;
 }
 
-.search-inner-left {
+.search .search-input img,
+.search .search-list img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.search .search-input .search-input-left,
+.search .search-list .search-list-left {
   flex-grow: 1;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-.search-container img {
-  width: 1.5rem;
+.search .search-list {
+  display: none;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+}
+
+.search .search-list p {
+  margin: 0;
 }
 
 /* Shortcut Component */
 
 .shortcut-container {
+  width: 100%;
+  max-width: 500px;
   cursor: pointer;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -311,8 +338,6 @@ main .logo-google {
   align-items: center;
   gap: 10px;
   padding-bottom: 1rem;
-  /* padding: 15px 30px; */
-  /* padding: 1rem 2rem; */
   border-radius: 5px;
 }
 
