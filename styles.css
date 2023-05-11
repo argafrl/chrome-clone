@@ -395,18 +395,24 @@ nav .profile-container img {
   position: absolute;
   align-items: center;
   width: 100%;
-  padding: 0 20px 10px 20px;
+  padding-bottom: 10px;
   border-radius: 0 0 10px 10px;
   background-color: white;
 }
 
 .search .search-list .search-list-wrapper {
   display: flex;
-  padding: 10px 0;
+  padding: 10px 20px 10px 20px;
+  cursor: default;
+}
+
+.search .search-list .search-list-wrapper:hover {
+  background-color: rgb(235, 235, 235);
 }
 
 .search .search-list .search-list-wrapper p {
   margin: 0;
+  color: #535353;
 }
 
 /* Shortcut Component */
