@@ -8,8 +8,8 @@
     <script type="module" src="script.js"></script>
   </head>
   <body>
-    <div id="modalProfile" class="modal">
-      <div class="modal-container">
+    <div id="modal-profile-container" class="modal">
+      <div id="modal-profile" class="modal-container">
         <div class="modal-content">
           <div class="modal-top">
             <a class="profile-wrapper-left">
@@ -51,6 +51,24 @@
           <a>Privacy Policy</a>
           <span>.</span>
           <a>Terms of Service</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-add-container" class="modal-add-container">
+      <div id="modal-add" class="modal-add">
+        <p>Add shortcut</p>
+        <div class="input-container">
+          <p>Name</p>
+          <input type="text" />
+        </div>
+        <div class="input-container">
+          <p>URL</p>
+          <input type="text" />
+        </div>
+        <div class="btn-container">
+          <button>Cancel</button>
+          <button>Done</button>
         </div>
       </div>
     </div>
@@ -204,7 +222,7 @@
           <p>Sign In</p>
         </div>
 
-        <div class="shortcut-wrapper">
+        <div class="shortcut-wrapper" id="btn-add-shortcut">
           <div class="shortcut-inner">
             <div class="image-container">
               <img
