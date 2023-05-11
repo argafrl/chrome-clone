@@ -267,6 +267,7 @@ nav .profile-container img {
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .search .search-input {
@@ -293,13 +294,13 @@ nav .profile-container img {
 }
 
 .search .search-input img,
-.search .search-list img {
+.search .search-list .search-list-wrapper img {
   width: 1rem;
   height: 1rem;
 }
 
 .search .search-input .search-input-left,
-.search .search-list .search-list-left {
+.search .search-list .search-list-wrapper .search-list-left {
   flex-grow: 1;
   display: flex;
   gap: 1rem;
@@ -308,14 +309,22 @@ nav .profile-container img {
 
 .search .search-list {
   display: none;
+  z-index: 1;
+  margin-top: 40px;
+  position: absolute;
   align-items: center;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0 20px 10px 20px;
   border-radius: 0 0 10px 10px;
   background-color: white;
 }
 
-.search .search-list p {
+.search .search-list .search-list-wrapper {
+  display: flex;
+  padding: 10px 0;
+}
+
+.search .search-list .search-list-wrapper p {
   margin: 0;
 }
 

@@ -11,7 +11,7 @@ btnProfile.onclick = () => {
 };
 
 searchInputTextbox.onclick = () => {
-  searchList.style.display = 'flex';
+  searchList.style.display = 'block';
   searchInput.style.borderRadius = '10px 10px 0 0';
 };
 
