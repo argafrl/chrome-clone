@@ -94,7 +94,7 @@ nav .profile-container img {
 }
 
 .modal {
-  /* display: none; */
+  display: none;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -410,6 +410,10 @@ nav .profile-container img {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.search .search-input-textbox-hide {
+  display: none;
 }
 
 .search .search-list {

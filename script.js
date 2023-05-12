@@ -11,6 +11,16 @@ let searchList = document.getElementById('search-list');
 let searchInput = document.getElementById('search-input');
 let searchInputTextbox = document.getElementById('search-input-textbox');
 
+let formSearch = document.querySelector('form');
+
+formSearch.addEventListener('submit', function (event) {
+  event.preventDefault();
+  window.open(
+    'https://www.google.com/search?q=' + searchInputTextbox.value,
+    '_self'
+  );
+});
+
 document.addEventListener('click', handleClickOutside);
 
 btnProfile.onclick = () => {
@@ -20,7 +30,7 @@ btnProfile.onclick = () => {
 
 btnAdd.onclick = () => {
   modalAddContainer.style.display = 'flex';
-}
+};
 
 searchInputTextbox.onclick = () => {
   searchList.style.display = 'block';
@@ -34,7 +44,10 @@ function handleClickOutside(event) {
 }
 
 function hideModalProfile(event) {
-  if (!modalProfile.contains(event.target) && !btnProfile.contains(event.target)) {
+  if (
+    !modalProfile.contains(event.target) &&
+    !btnProfile.contains(event.target)
+  ) {
     modalProfileContainer.style.display = 'none';
   }
 }
