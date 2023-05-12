@@ -322,6 +322,7 @@ nav .profile-container img {
 }
 
 .modal-add .input-container input {
+  caret-color: rgb(106, 170, 255);
   margin-top: 5px;
   background-color: #363636;
   border: none;
