@@ -11,6 +11,8 @@ let searchList = document.getElementById('search-list');
 let searchInput = document.getElementById('search-input');
 let searchInputTextbox = document.getElementById('search-input-textbox');
 
+document.addEventListener('click', handleClickOutside);
+
 btnProfile.onclick = () => {
   modalProfileContainer.style.display = 'block';
   modalProfile.style.display = 'block';
@@ -25,17 +27,27 @@ searchInputTextbox.onclick = () => {
   searchInput.style.borderRadius = '10px 10px 0 0';
 };
 
-document.addEventListener('click', function clickOutside(event) {
+function handleClickOutside(event) {
+  hideModalProfile(event);
+  hideModalAdd(event);
+  hideSearchList(event);
+}
+
+function hideModalProfile(event) {
+  if (!modalProfile.contains(event.target) && !btnProfile.contains(event.target)) {
+    modalProfileContainer.style.display = 'none';
+  }
+}
+
+function hideModalAdd(event) {
+  if (!modalAdd.contains(event.target) && !btnAdd.contains(event.target)) {
+    modalAddContainer.style.display = 'none';
+  }
+}
+
+function hideSearchList(event) {
   if (!searchContainer.contains(event.target)) {
     searchList.style.display = 'none';
     searchInput.style.borderRadius = '50px';
   }
-
-  if (!modalProfile.contains(event.target) && !btnProfile.contains(event.target)) {
-    modalProfileContainer.style.display = 'none';
-  }
-
-  if (!modalAdd.contains(event.target) && !btnAdd.contains(event.target)) {
-    modalAddContainer.style.display = 'none';
-  }
-});
+}
