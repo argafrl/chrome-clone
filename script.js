@@ -13,14 +13,7 @@ let searchInputTextbox = document.getElementById('search-input-textbox');
 
 let formSearch = document.querySelector('form');
 
-formSearch.addEventListener('submit', function (event) {
-  event.preventDefault();
-  window.open(
-    'https://www.google.com/search?q=' + searchInputTextbox.value,
-    '_self'
-  );
-});
-
+formSearch.addEventListener('submit', handleSearch);
 document.addEventListener('click', handleClickOutside);
 
 btnProfile.onclick = () => {
@@ -37,11 +30,19 @@ searchInputTextbox.onclick = () => {
   searchInput.style.borderRadius = '10px 10px 0 0';
 };
 
+function handleSearch(event) {
+  event.preventDefault();
+  window.open(
+    'https://www.google.com/search?q=' + searchInputTextbox.value,
+    '_self'
+  );
+};
+
 function handleClickOutside(event) {
   hideModalProfile(event);
   hideModalAdd(event);
   hideSearchList(event);
-}
+};
 
 function hideModalProfile(event) {
   if (
@@ -50,17 +51,17 @@ function hideModalProfile(event) {
   ) {
     modalProfileContainer.style.display = 'none';
   }
-}
+};
 
 function hideModalAdd(event) {
   if (!modalAdd.contains(event.target) && !btnAdd.contains(event.target)) {
     modalAddContainer.style.display = 'none';
   }
-}
+};
 
 function hideSearchList(event) {
   if (!searchContainer.contains(event.target)) {
     searchList.style.display = 'none';
     searchInput.style.borderRadius = '50px';
   }
-}
+};
